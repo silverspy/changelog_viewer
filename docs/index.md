@@ -17,6 +17,7 @@
 * Automatic detection of type of repository
 * Heroku deployment
 * Docker image
+* DOwnload as pdf
 
 ## What will be used for grades
 
