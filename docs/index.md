@@ -20,12 +20,12 @@
 
 ## What will be used for grades
 
-* + IDE definition
-* + Trello board
-* ++ Slack channel
-* + Documentation of specifications
-* + Planning
-* ++ CI
-* +++ Documentation on integration a new developper
-* + Code
-* + Product
+* `++` IDE/Runtime definition (Eclipse setup, pom, ...)
+* `+` Trello board
+* `++` Slack channel
+* `+` Documentation of specifications
+* `+` Planning
+* `++` CI
+* `+++` Documentation on integration a new developper
+* `+` Code
+* `+` Product
