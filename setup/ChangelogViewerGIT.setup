@@ -47,7 +47,7 @@
   <setupTask
       xsi:type="git:GitCloneTask"
       id="git.clone.changelog_viewer.git"
-      remoteURI="jacobgeisel/changelog_viewer.git">
+      remoteURI="jacobgeisel/changelog_viewer">
     <annotation
         source="http://www.eclipse.org/oomph/setup/InducedChoices">
       <detail
