@@ -19,5 +19,7 @@ une application de visualisation des commits d'un repertoire distant
   # Demo
   
   ![basic](https://github.com/silverspy/changelog_viewer/blob/master/docs/basic.png)
+  
   Indiquer l'adresse du repertoire distant validez vous devriez obtenir le resultat suivant
+  
   ![basic](https://github.com/silverspy/changelog_viewer/blob/master/docs/basic2.png)
