@@ -27,7 +27,7 @@ class Form extends React.Component {
                 this.setState({
                     dataGit: data.data
                 });
-                return true;
+                return data.data;
             })
             // catch the error
             .catch(function (error) {
