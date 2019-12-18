@@ -12,6 +12,43 @@ class Form extends React.Component {
         this.getCommitsMessage = this.getCommitsMessage.bind(this);
     }
 
+    authenficatedCommit(url)
+    {
+      var token = document.getElementById('tokenOath').value
+      if(url.indexOf("github") != -1)
+      {
+        axios.get(url,{ headers: { Authorization: `token `+token } })
+        // success : set the state to store commits messages
+        .then((data) => {
+            this.setState({
+                dataGit: data.data
+            });
+        })
+        // catch the error
+        .catch(function (error) {
+            console.log(error);
+        })
+        .finally(function () {
+            //
+        });
+      }
+      else {
+        axios.get(url,{ headers: { PRIVATE-TOKEN: token } })
+        .then((data) => {
+            this.setState({
+                dataGit: data.data
+            });
+        })
+        // catch the error
+        .catch(function (error) {
+            console.log(error);
+        })
+        .finally(function () {
+
+        });
+      }
+
+    }
     // Function to get all commits messages from a git
     getCommitsMessage() {
         // construct the url
@@ -28,6 +65,7 @@ class Form extends React.Component {
             })
             // catch the error
             .catch(function (error) {
+              authenficatedCommit(url)
                 console.log(error);
             })
             .finally(function () {
@@ -35,12 +73,13 @@ class Form extends React.Component {
             });
     }
 
-    // Display the component 
+    // Display the component
     render() {
         return (
             <div>
                 <div>
                     <TextField id="urlGit" label="URL Repository Git" variant="filled" />
+                    <TextField id="tokenOath" label="token Oath" variant="filled"/>
                     <Button variant="outlined" type="submit" onClick={this.getCommitsMessage}>Submit</Button>
                 </div>
                 { this.state.dataGit ?
