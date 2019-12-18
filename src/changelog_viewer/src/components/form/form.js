@@ -15,20 +15,39 @@ class Form extends React.Component {
     authenficatedCommit(url)
     {
       var token = document.getElementById('tokenOath').value
-      axios.get(url,{ headers: { Authorization: `token `+token } })
-      // success : set the state to store commits messages
-      .then((data) => {
-          this.setState({
-              dataGit: data.data
-          });
-      })
-      // catch the error
-      .catch(function (error) {
-          console.log(error);
-      })
-      .finally(function () {
-          //
-      });
+      if(url.indexOf("github") != -1)
+      {
+        axios.get(url,{ headers: { Authorization: `token `+token } })
+        // success : set the state to store commits messages
+        .then((data) => {
+            this.setState({
+                dataGit: data.data
+            });
+        })
+        // catch the error
+        .catch(function (error) {
+            console.log(error);
+        })
+        .finally(function () {
+            //
+        });
+      }
+      else {
+        axios.get(url,{ headers: { PRIVATE-TOKEN: token } })
+        .then((data) => {
+            this.setState({
+                dataGit: data.data
+            });
+        })
+        // catch the error
+        .catch(function (error) {
+            console.log(error);
+        })
+        .finally(function () {
+
+        });
+      }
+
     }
     // Function to get all commits messages from a git
     getCommitsMessage() {
