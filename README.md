@@ -10,11 +10,12 @@ une application de visualisation des commits d'un repertoire distant
  * react-native 1.8
  # Comment demarrez l'application
   Executez les commandes suivantes
-  $ cd src/changelog_viewer
   
-  $ npm install
+  `$ cd src/changelog_viewer`
   
-  $ npm start
+  `$ npm install`
+  
+  `$ npm start`
   
   # Comment utilisez l'application
   Indiquez l'adresse du repertoire distant puis valider

@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import List from '../list/list';
 
 // Component to generate form
 class Form extends React.Component {
@@ -43,8 +44,15 @@ class Form extends React.Component {
     render() {
         return (
             <div>
-                <TextField id="urlGit" label="URL Repository Git" variant="filled" />
-                <Button variant="outlined" type="submit" onClick={this.getCommitsMessage}>Submit</Button>
+                <div>
+                    <TextField id="urlGit" label="URL Repository Git" variant="filled" />
+                    <Button variant="outlined" type="submit" onClick={this.getCommitsMessage}>Submit</Button>
+                </div>
+                { this.state.dataGit ?
+                    <List data={this.state.dataGit}/>
+                    :
+                    <div></div>
+                }
             </div>
         );
     }

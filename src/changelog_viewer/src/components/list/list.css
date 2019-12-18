@@ -1,0 +1,19 @@
+.root {
+    width: 100%;
+}
+
+.paper{
+    width: 100%;
+    overflow-x: 'auto';
+}
+
+.table{
+    min-width: 650;
+    max-width: 650;
+    size: "small";
+    /* font-family: "a dense table"; */
+}
+
+.MuiTableCell-head{
+    font-weight: bold !important;
+}
