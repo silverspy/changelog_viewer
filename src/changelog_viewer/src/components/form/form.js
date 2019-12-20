@@ -13,6 +13,25 @@ class Form extends React.Component {
         this.getCommitsMessage = this.getCommitsMessage.bind(this);
     }
 
+    // Function to get all commits messages from a git
+    getCommitsMessage() {
+        // construct the url
+        var url = document.getElementById('urlGit').value.replace('https://github.com/', 'https://api.github.com/repos/');
+        url = url + "/commits";
+        if(url == "/commits")
+        {
+          url="https://api.github.com/repos/silverspy/changelog_viewer/commits";
+        }
+        // Get request to get datas
+        axios.get(url)
+            // success : set the state to store commits messages
+            .then((data) => {
+                this.setState({
+                    dataGit: data.data
+                });
+                return data.data;
+              });
+            }
     // Method to get datas from gitlab about a project
     getIdRepositoryGitLab(urlGetId) {
         var gitId = "";
@@ -37,10 +56,12 @@ class Form extends React.Component {
                     })
                     .finally(function () {
                     });
+
             })
             // catch the error
             .catch(function (error) {
                 console.log(error);
+                return false;
             })
             .finally(function () {
             });
@@ -83,7 +104,7 @@ class Form extends React.Component {
         }
     }
 
-    // Display the component 
+    // Display the component
     render() {
         return (
             <div>
