@@ -30,7 +30,8 @@ class Form extends React.Component {
                     dataGit: data.data
                 });
                 return data.data;
-
+              });
+            }
     // Method to get datas from gitlab about a project
     getIdRepositoryGitLab(urlGetId) {
         var gitId = "";
